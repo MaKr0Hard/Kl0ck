@@ -96,7 +96,7 @@ int main () {
         double angle_min_deg = (((human_readable_t->tm_min) * 6)  + ((human_readable_t->tm_sec) * 0.1) - 90);
         double angle_hour_deg = (((human_readable_t->tm_hour)*30) + ((human_readable_t->tm_min) * 0.5) + ((human_readable_t->tm_sec) * 0.00833333333333) - 90);  // Pretty big calculations, huh
         Position hand1 = get_coordinates_for_angle_deg(300, 240, 150, angle_sec_deg);
-        DrawLine(300, 240, hand1.x, hand1.y, RED);
+
 
         //old Position hand2 = get_coordinates_for_angle_deg(300, 240, 150, angle_min_deg);
         //old DrawLine(300, 240, hand2.x, hand2.y, BLACK);
@@ -108,6 +108,7 @@ int main () {
 
         DrawWin1_0StyleHands(300, 240, 100, angle_hour_deg, BLACK, 5, 5, 15);
 
+        DrawLine(300, 240, hand1.x, hand1.y, RED);
 
         EndDrawing();
     }
